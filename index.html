@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Smart Student — Android ilovasini yuklab olish.">
+  <meta name="description" content="Smart Student — o‘quvchilar uchun Android ilova.">
   <title>Smart Student — Ilova</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,12 +13,11 @@
       background: #fff;
       color: #202124;
       line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
     }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
 
-    /* ===== HEADER ===== */
+    /* HEADER */
     header {
       position: sticky; top: 0;
       background: #fff;
@@ -40,16 +39,12 @@
       gap: 10px;
       font-weight: 600;
       font-size: 18px;
-      color: #202124;
     }
-    .logo-icon {
+    .logo img {
       width: 36px; height: 36px;
       border-radius: 9px;
-      background: linear-gradient(135deg, #a78bfa, #7c3aed);
-      display: grid; place-items: center;
-      color: #fff;
-      font-weight: 900;
-      font-size: 20px;
+      object-fit: contain;
+      background: #f1f3f4;
     }
     .search-wrap { flex: 1; min-width: 200px; max-width: 500px; }
     .search {
@@ -60,14 +55,12 @@
       background: #f1f3f4;
       font-size: 15px;
       outline: none;
-      transition: all .2s;
     }
-    .search:focus { background: #fff; border-color: #1a73e8; box-shadow: 0 1px 6px rgba(32,33,36,.15); }
+    .search:focus { background: #fff; border-color: #1a73e8; }
 
-    /* ===== MAIN ===== */
     main { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
 
-    /* ===== APP DETAIL (yuqori qism) ===== */
+    /* APP HEADER */
     .app-header {
       display: grid;
       grid-template-columns: 1fr;
@@ -86,7 +79,7 @@
       color: #7c3aed;
       font-size: 15px;
       font-weight: 500;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
     .app-tags {
       display: flex;
@@ -108,23 +101,19 @@
       margin-bottom: 20px;
     }
 
-    /* Katta rasm (hero) */
+    /* BANNER */
     .app-hero-img {
       width: 100%;
       border-radius: 16px;
       background: #f1f3f4;
       aspect-ratio: 16/9;
-      display: grid;
-      place-items: center;
-      color: #9aa0a6;
-      font-size: 14px;
-      margin-bottom: 20px;
       overflow: hidden;
       border: 1px solid #e8eaed;
+      margin-bottom: 20px;
     }
     .app-hero-img img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* ===== O'NG TOMON (o'rnatish kartasi) ===== */
+    /* INSTALL CARD */
     .install-card {
       background: #fff;
       border: 1px solid #e8eaed;
@@ -135,11 +124,9 @@
     .install-icon {
       width: 80px; height: 80px;
       border-radius: 20px;
-      background: linear-gradient(135deg, #a78bfa, #7c3aed);
-      display: grid; place-items: center;
-      color: #fff;
-      font-weight: 900;
-      font-size: 40px;
+      object-fit: contain;
+      background: #f1f3f4;
+      padding: 8px;
       margin-bottom: 20px;
     }
     .install-stats {
@@ -151,7 +138,7 @@
       padding-bottom: 20px;
       border-bottom: 1px solid #e8eaed;
     }
-    .stat-value { font-size: 15px; font-weight: 500; color: #202124; }
+    .stat-value { font-size: 15px; font-weight: 500; }
     .stat-label { font-size: 12px; color: #5f6368; margin-top: 2px; }
     .btn-install {
       display: flex;
@@ -167,13 +154,11 @@
       font-size: 15px;
       font-weight: 500;
       cursor: pointer;
-      transition: background .15s;
       font-family: inherit;
     }
     .btn-install:hover { background: #016d4d; }
-    .btn-install:active { background: #015a3f; }
 
-    /* ===== SCREENSHOTS ===== */
+    /* SCREENSHOTS */
     .screenshots-section {
       padding: 24px 0;
       border-top: 1px solid #e8eaed;
@@ -188,26 +173,21 @@
       gap: 12px;
       overflow-x: auto;
       padding-bottom: 8px;
-      scrollbar-width: thin;
     }
     .screenshots-row::-webkit-scrollbar { height: 8px; }
     .screenshots-row::-webkit-scrollbar-thumb { background: #dadce0; border-radius: 4px; }
     .screenshot {
-      width: 180px;
+      width: 200px;
       aspect-ratio: 9/16;
       border-radius: 12px;
       background: #f1f3f4;
-      display: grid;
-      place-items: center;
-      color: #9aa0a6;
-      font-size: 13px;
       flex-shrink: 0;
       border: 1px solid #e8eaed;
       overflow: hidden;
     }
     .screenshot img { width: 100%; height: 100%; object-fit: cover; }
 
-    /* ===== INFO ===== */
+    /* INFO */
     .info-section {
       padding: 24px 0;
       border-top: 1px solid #e8eaed;
@@ -227,11 +207,14 @@
     @media (min-width: 700px) {
       .info-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
     }
-    .info-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f3f4; }
-    .info-row span:first-child { color: #5f6368; }
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #f1f3f4;
+    }
     .info-row span:last-child { color: #202124; font-weight: 500; }
 
-    /* ===== FOOTER ===== */
     footer {
       margin-top: 40px;
       padding: 24px 16px;
@@ -241,7 +224,6 @@
       font-size: 13px;
     }
 
-    /* ===== EMPTY ===== */
     .empty {
       display: none;
       text-align: center;
@@ -256,7 +238,7 @@
   <header>
     <div class="header-inner">
       <a href="#" class="logo">
-        <img src="logo.png" alt="Smart Student" style="width:36px;height:36px;border-radius:9px;object-fit:contain;background:#fff">
+        <img src="logo.png" alt="Smart Student">
         <span>Smart Student</span>
       </a>
       <div class="search-wrap">
@@ -267,8 +249,8 @@
 
   <main>
 
-    <!-- ILOVA HAQIDA YUQORI QISM -->
-    <section class="app-header" data-search="smart student o'qish dars jadvali ta'lim">
+    <!-- ILOVA YUQORI QISM -->
+    <section class="app-header" data-search="smart student o'qish dars jadvali ta'lim uy vazifalari pomodoro baholar">
       <div class="app-header-left">
         <h1>Smart Student</h1>
         <div class="app-dev">Smart Student jamoasi</div>
@@ -278,21 +260,19 @@
           <span class="tag">✓ Hammaga mos</span>
         </div>
 
-        <!-- KATTA RASM (banner). Keyin o'zingizning rasm qo'yasiz. -->
+        <!-- KATTA BANNER -->
         <div class="app-hero-img">
-          <span>Bu yerga katta rasm qo'yiladi</span>
-          <!-- Rasm qo'yish uchun: pastdagi qatorni ochib, izohdagi kabi qiling -->
-          <!-- <img src="banner.jpg" alt="Smart Student"> -->
+          <img src="1.jpg" alt="Smart Student asosiy ekrani">
         </div>
 
         <p class="app-desc">
-          Smart Student — o‘quvchilar uchun mo‘ljallangan yordamchi ilova. Dars jadvali, vazifalar va o‘qish jarayonini tartibga solishga yordam beradi. Sodda, tez va qulay.
+          Smart Student — o‘quvchilar uchun mo‘ljallangan yordamchi ilova. Uy vazifalari, dars jadvali, baholar, Pomodoro taymer va boshqa foydali vositalar bir joyda. Sodda, tez va qulay.
         </p>
       </div>
 
       <!-- O'RNATISH KARTASI -->
       <div class="install-card">
-        <img src="logo.png" alt="Smart Student" class="install-icon" style="object-fit:contain;background:#fff;padding:8px">
+        <img src="logo.png" alt="Smart Student" class="install-icon">
 
         <div class="install-stats">
           <div>
@@ -315,16 +295,15 @@
       </div>
     </section>
 
-    <!-- SCREENSHOTS (rasmlar) -->
+    <!-- SCREENSHOTS -->
     <section class="screenshots-section">
       <h2>Ilovadan rasmlar</h2>
       <div class="screenshots-row">
-        <div class="screenshot"><span>1-rasm</span></div>
-        <div class="screenshot"><span>2-rasm</span></div>
-        <div class="screenshot"><span>3-rasm</span></div>
-        <div class="screenshot"><span>4-rasm</span></div>
-        <!-- Rasm qo'yish uchun: pastdagi kabi qiling -->
-        <!-- <div class="screenshot"><img src="1.jpg" alt=""></div> -->
+        <div class="screenshot"><img src="1.jpg" alt="Asosiy menyu"></div>
+        <div class="screenshot"><img src="2.jpg" alt="Pomodoro"></div>
+        <div class="screenshot"><img src="3.jpg" alt="Uy vazifalari"></div>
+        <div class="screenshot"><img src="4.jpg" alt="Baholar"></div>
+        <div class="screenshot"><img src="5.jpg" alt="Sozlamalar"></div>
       </div>
     </section>
 
