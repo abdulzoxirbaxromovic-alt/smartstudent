@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Smart Student — o‘quvchilar uchun Android ilova.">
+  <meta name="description" content="Smart Student — o‘quvchilar uchun Android ilova. Uy vazifalari, dars jadvali, baholar, Pomodoro taymer.">
   <title>Smart Student — Ilova</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -187,6 +187,99 @@
     }
     .screenshot img { width: 100%; height: 100%; object-fit: cover; }
 
+    /* FEATURES */
+    .features-section {
+      padding: 32px 0;
+      border-top: 1px solid #e8eaed;
+    }
+    .features-section h2 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 600px) {
+      .features-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (min-width: 900px) {
+      .features-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .feature-card {
+      display: flex;
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid #e8eaed;
+      border-radius: 12px;
+      background: #fff;
+    }
+    .feature-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .feature-text h3 {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: #202124;
+    }
+    .feature-text p {
+      font-size: 13px;
+      color: #5f6368;
+      line-height: 1.4;
+    }
+
+    /* FAQ */
+    .faq-section {
+      padding: 32px 0;
+      border-top: 1px solid #e8eaed;
+    }
+    .faq-section h2 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .faq-item {
+      border-bottom: 1px solid #e8eaed;
+    }
+    .faq-item:first-child { border-top: 1px solid #e8eaed; }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      padding: 18px 0;
+      background: none;
+      border: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: #202124;
+      cursor: pointer;
+      font-family: inherit;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-q:hover { color: #7c3aed; }
+    .faq-icon {
+      font-size: 20px;
+      color: #5f6368;
+      transition: transform .2s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s ease;
+      color: #5f6368;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 18px; }
+
     /* INFO */
     .info-section {
       padding: 24px 0;
@@ -214,6 +307,42 @@
       border-bottom: 1px solid #f1f3f4;
     }
     .info-row span:last-child { color: #202124; font-weight: 500; }
+
+    /* CONTACT */
+    .contact-section {
+      padding: 32px 0;
+      border-top: 1px solid #e8eaed;
+    }
+    .contact-section h2 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .contact-section p {
+      color: #5f6368;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #fff;
+      transition: transform .15s;
+    }
+    .contact-btn:hover { transform: translateY(-2px); }
+    .contact-btn svg { width: 22px; height: 22px; }
+    .btn-telegram { background: #229ED9; }
+    .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
 
     footer {
       margin-top: 40px;
@@ -260,7 +389,6 @@
           <span class="tag">✓ Hammaga mos</span>
         </div>
 
-        <!-- KATTA BANNER -->
         <div class="app-hero-img">
           <img src="1.jpg" alt="Smart Student asosiy ekrani">
         </div>
@@ -270,13 +398,12 @@
         </p>
       </div>
 
-      <!-- O'RNATISH KARTASI -->
       <div class="install-card">
         <img src="logo.png" alt="Smart Student" class="install-icon">
 
         <div class="install-stats">
           <div>
-            <div class="stat-value">5.0 ★</div>
+            <div class="stat-value">4.8 ★</div>
             <div class="stat-label">Reyting</div>
           </div>
           <div>
@@ -284,7 +411,7 @@
             <div class="stat-label">Hajmi</div>
           </div>
           <div>
-            <div class="stat-value">100000+</div>
+            <div class="stat-value">1+</div>
             <div class="stat-label">Yuklash</div>
           </div>
         </div>
@@ -307,7 +434,109 @@
       </div>
     </section>
 
-    <!-- MA'LUMOT -->
+    <!-- FEATURES -->
+    <section class="features-section">
+      <h2>Ilova xususiyatlari</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <div class="feature-text">
+            <h3>Uy vazifalari</h3>
+            <p>Vazifalarni saqlash va muddatini eslatib turish</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📅</div>
+          <div class="feature-text">
+            <h3>Dars jadvali</h3>
+            <p>Haftalik darslarni tartibga solish</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⭐</div>
+          <div class="feature-text">
+            <h3>Baholar daftari</h3>
+            <p>Baholarni kuzatish va o‘rtacha hisoblash</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⏱</div>
+          <div class="feature-text">
+            <h3>Pomodoro taymer</h3>
+            <p>Diqqatni jamlash uchun 25 daqiqalik usul</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <div class="feature-text">
+            <h3>Parollar menejeri</h3>
+            <p>Muhim parollarni xavfsiz saqlash</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌙</div>
+          <div class="feature-text">
+            <h3>Qorong‘i rejim</h3>
+            <p>Ko‘zni charchatmaydigan tungi rejim</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2>Ko‘p beriladigan savollar</h2>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Ilova bepulmi?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Ha, Smart Student to‘liq bepul. Hech qanday yashirin to‘lovlar yo‘q.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Ilovani qanday o‘rnataman?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Saytdagi "⬇ Yuklab olish" tugmasini bosing. APK fayl yuklanadi. Uni ochib, "O‘rnatish" tugmasini bosing. Agar "Noma'lum manbalardan o‘rnatish" ruxsati so‘ralsa — ruxsat bering.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>PIN-kodni unutdim, nima qilaman?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">PIN-kodni unutgan bo‘lsangiz, ilovani o‘chirib, qaytadan o‘rnatasiz. Yoki Sozlamalar bo‘limidan PIN-kodni o‘zgartirish mumkin.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Ilova xavfsizmi?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Ha. Ilova hech qanday shaxsiy ma'lumot to‘plamaydi. Barcha ma'lumotlar faqat sizning qurilmangizda saqlanadi.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Ma'lumotlarim qayerda saqlanadi?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Barcha ma'lumotlar (vazifalar, baholar, jadval) faqat sizning telefoningizda saqlanadi. Internetga yuborilmaydi.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          <span>Yangilanishlar keladimi?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">Ha, ilova doimiy rivojlanmoqda. Yangi versiyalar haqida Telegram kanalimizda xabar beramiz.</div>
+      </div>
+    </section>
+
+    <!-- INFO -->
     <section class="info-section">
       <h2>Ilova haqida</h2>
       <div class="info-grid">
@@ -317,10 +546,26 @@
           <div class="info-row"><span>Hajmi</span><span>12 MB</span></div>
         </div>
         <div>
-          <div class="info-row"><span>Ishlab chiquvchi</span><span>Abdulzoxir</span></div>
+          <div class="info-row"><span>Ishlab chiquvchi</span><span>Smart Student</span></div>
           <div class="info-row"><span>Platforma</span><span>Android</span></div>
           <div class="info-row"><span>Turi</span><span>APK</span></div>
         </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-section">
+      <h2>Biz bilan bog‘lanish</h2>
+      <p>Yangiliklar va yangilanishlar uchun bizga qo‘shiling</p>
+      <div class="contact-buttons">
+        <a class="contact-btn btn-telegram" href="https://t.me/smartstudent_uz" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+          Telegram kanal
+        </a>
+        <a class="contact-btn btn-instagram" href="https://www.instagram.com/smartstudent.uz" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.38C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.13.67.67 1.34 1.08 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.38.67-.67 1.08-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.93 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm7.85-10.4a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+          Instagram
+        </a>
       </div>
     </section>
 
@@ -333,30 +578,39 @@
   </footer>
 
   <script>
+    // Yil
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Qidiruv
     const search = document.getElementById('search');
     const appSection = document.querySelector('.app-header');
     const screenshots = document.querySelector('.screenshots-section');
+    const features = document.querySelector('.features-section');
+    const faq = document.querySelector('.faq-section');
     const info = document.querySelector('.info-section');
+    const contact = document.querySelector('.contact-section');
     const empty = document.getElementById('empty');
 
     search.addEventListener('input', () => {
       const q = search.value.trim().toLowerCase();
       if (!q) {
-        appSection.style.display = '';
-        screenshots.style.display = '';
-        info.style.display = '';
+        [appSection, screenshots, features, faq, info, contact].forEach(el => el.style.display = '');
         empty.style.display = 'none';
         return;
       }
       const text = (appSection.innerText + ' ' + appSection.dataset.search).toLowerCase();
       const match = text.includes(q);
-      appSection.style.display = match ? '' : 'none';
-      screenshots.style.display = match ? '' : 'none';
-      info.style.display = match ? '' : 'none';
+      [appSection, screenshots, features, faq, info, contact].forEach(el => el.style.display = match ? '' : 'none');
       empty.style.display = match ? 'none' : 'block';
     });
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // FAQ ochish/yopish
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        item.classList.toggle('open');
+      });
+    });
   </script>
 
 </body>
